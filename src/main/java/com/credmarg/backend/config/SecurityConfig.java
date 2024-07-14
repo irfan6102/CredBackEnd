@@ -17,7 +17,7 @@ public class SecurityConfig {
 
 	@Bean
 	public SecurityFilterChain adminSecurityFilterChain(HttpSecurity http) throws Exception {
-		http.authorizeHttpRequests().requestMatchers("/admin/*").authenticated().requestMatchers("user/*").permitAll().and()
+		http.csrf().disable().authorizeHttpRequests().requestMatchers("/admin/*").authenticated().requestMatchers("/h2-console/**").permitAll().and()
 				.formLogin().and().httpBasic();
 		return http.build();
 	}

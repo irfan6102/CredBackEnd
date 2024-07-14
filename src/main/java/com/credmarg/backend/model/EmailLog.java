@@ -14,12 +14,11 @@ public class EmailLog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String recipients; // Comma-separated list of recipients
+    private String recipients; 
     private String subject;
     private String content;
     private LocalDateTime sentAt;
 
-    // Constructors, getters, and setters
     public EmailLog() {
     }
 
