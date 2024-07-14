@@ -13,13 +13,13 @@ import com.credmarg.backend.service.EmailLogService;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/admin/api/emailLogs")
+@RequestMapping("/admin")
 public class EmailLogController {
 
     @Autowired
     private EmailLogService emailLogService;
 
-    @GetMapping
+    @GetMapping("/emailLogs")
     public List<EmailLog> getAllEmailLogs() {
         return emailLogService.getAllEmailLogs();
     }
